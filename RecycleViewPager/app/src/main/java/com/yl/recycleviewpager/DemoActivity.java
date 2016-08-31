@@ -47,7 +47,7 @@ public class DemoActivity extends FragmentActivity implements View.OnClickListen
         pointLayout = (LinearLayout) findViewById(R.id.pointLayout);
         buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
         pointLayout.removeAllViews();
-        final int size = 12;
+        final int size = 5;
         for (int i = 0; i < size; i++) {
             ArrayList<String> list = new ArrayList<>();
             for (int j = 0; j < 40; j++) {

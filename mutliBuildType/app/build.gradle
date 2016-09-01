@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.example.administrator.hello"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    sourceSets {
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    signingConfigs {
+        debug {
+            storeFile file("sign/my.jks")
+            storePassword "123456"
+            keyAlias "Hello"
+            keyPassword "123456"
+        }
+
+        release {
+            //这样写就得把demo.jk文件放在项目目录
+            storeFile file("sign/my.jks")
+            storePassword "123456"
+            keyAlias "Hello"
+            keyPassword "123456"
+        }
+
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}

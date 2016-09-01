@@ -55,13 +55,13 @@
         android:layout_height="1dp"
         android:background="#cccccc"></View>
 
-    <android.support.v4.view.ViewPager
+    <com.yl.recycleviewpager.RecycleViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_weight="1.0"
         android:layout_height="0dp">
 
-    </android.support.v4.view.ViewPager>
+    </com.yl.recycleviewpager.RecycleViewPager>
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"

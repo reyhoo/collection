@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Administrator on 2016/8/30.
  */
 public class DemoActivity extends FragmentActivity implements View.OnClickListener {
-    private ViewPager mViewPager;
+    private RecycleViewPager mViewPager;
     //    private ArrayList<String> list1 = new ArrayList<>();
 //    private ArrayList<String> list2 = new ArrayList<>();
 //    private ArrayList<String> list3 = new ArrayList<>();
@@ -40,14 +40,8 @@ public class DemoActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
-        indicateLayout = (LinearLayout) findViewById(R.id.indicate_layout);
-        indicateView = findViewById(R.id.indicate_view);
-        currPoint = (ImageView) findViewById(R.id.curr_point);
-        pointLayout = (LinearLayout) findViewById(R.id.pointLayout);
-        buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
-        pointLayout.removeAllViews();
-        final int size = 5;
+
+        final int size = 1;
         for (int i = 0; i < size; i++) {
             ArrayList<String> list = new ArrayList<>();
             for (int j = 0; j < 40; j++) {
@@ -56,77 +50,13 @@ public class DemoActivity extends FragmentActivity implements View.OnClickListen
             items.add(list);
         }
 
-//        MyFragmentAdapter adapter = new MyFragmentAdapter(items, getSupportFragmentManager());
-        MyPagerAdapter adapter = new MyPagerAdapter(this,items);
-        mViewPager.setAdapter(adapter);
-
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            private Runnable runnable;
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.i(TAG, TAG + "onPageScrolled:position:" + position + ";positionOffset:" + positionOffset + ";positionOffsetPixels:" + positionOffsetPixels);
-                if (position >= size) {
-                    return;
-                }
-
-                if (position == 0) {
-                    return;
-                }
-                position--;
-
-                updateIndicate(position, positionOffset);
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if (position == size + 1) {
-                    runnable = new Runnable() {
-                        @Override
-                        public void run() {
-                            mViewPager.setCurrentItem(1, false);
-                        }
-                    };
-
-
-                } else if (position == 0) {
-                    runnable = new Runnable() {
-                        @Override
-                        public void run() {
-                            mViewPager.setCurrentItem(size, false);
-                        }
-                    };
-
-                }
-                if (position == size) {
-                    updateIndicate(position - 1, 0);
-                }
-                Log.i(TAG, TAG + "onPageSelected:position:" + position);
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                Log.i(TAG, TAG + "onPageScrollStateChanged:state:" + state);
-                if (state == 0) {
-                    if (runnable != null) {
-                        mViewPager.post(runnable);
-                        runnable = null;
-                    }
-                }
-            }
-        });
-        indicateLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                indicateLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                mIndicateWidth = indicateLayout.getWidth() * 1f / size;
-                indicateView.getLayoutParams().width = (int) mIndicateWidth;
-                indicateView.requestLayout();
-                mViewPager.setCurrentItem(1, false);
-            }
-        });
+        mViewPager = (RecycleViewPager) findViewById(R.id.viewPager);
+        indicateLayout = (LinearLayout) findViewById(R.id.indicate_layout);
+        indicateView = findViewById(R.id.indicate_view);
+        currPoint = (ImageView) findViewById(R.id.curr_point);
+        pointLayout = (LinearLayout) findViewById(R.id.pointLayout);
+        buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
+        pointLayout.removeAllViews();
         float density = getResources().getDisplayMetrics().density;
 
         for (int i = 0; i < size; i++) {
@@ -143,7 +73,7 @@ public class DemoActivity extends FragmentActivity implements View.OnClickListen
         for (int i = 0; i < size; i++) {
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f);
             Button btn = new Button(this);
-            btn.setTag(i + 1);
+            btn.setTag(i);
             btn.setOnClickListener(this);
             btn.setLayoutParams(params);
             buttonLayout.addView(btn);
@@ -151,6 +81,18 @@ public class DemoActivity extends FragmentActivity implements View.OnClickListen
         int left = (int) ((getResources().getDisplayMetrics().widthPixels - (size - 1) * 15 * density - 8 * density * size) / 2);
         ((FrameLayout.LayoutParams) currPoint.getLayoutParams()).leftMargin = left;
         currPoint.requestLayout();
+
+//        MyFragmentAdapter adapter = new MyFragmentAdapter(items, getSupportFragmentManager());
+        indicateLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                indicateLayout.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                mIndicateWidth = indicateLayout.getWidth() * 1f / size;
+                indicateView.getLayoutParams().width = (int) mIndicateWidth;
+                indicateView.requestLayout();
+                initAdapter();
+            }
+        });
 
     }
 
@@ -162,12 +104,38 @@ public class DemoActivity extends FragmentActivity implements View.OnClickListen
 
         currPoint.setTranslationX(translationX);
     }
+    private void initAdapter(){
+        MyPagerAdapter adapter = new MyPagerAdapter(this,items);
+        mViewPager.setAdapter(adapter);
+
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                Log.i(TAG, TAG + "onPageScrolled:position:" + position + ";positionOffset:" + positionOffset + ";positionOffsetPixels:" + positionOffsetPixels);
+
+                updateIndicate(position, positionOffset);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Log.i(TAG, TAG + "onPageSelected:position:" + position);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                Log.i(TAG, TAG + "onPageScrollStateChanged:state:" + state);
+            }
+        });
+    }
 
     @Override
     public void onClick(View v) {
         Integer position = (Integer) v.getTag();
         if (position != null) {
-            mViewPager.setCurrentItem(position, false);
+            mViewPager.setCurrentItem(position);
         }
     }
 }

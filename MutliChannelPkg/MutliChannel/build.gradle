@@ -43,9 +43,6 @@ android {
 
     productFlavors {
 
-        Umeng {
-            manifestPlaceholders = [CHANNEL_VALUE: "Umeng"]
-        }
         _360baohe {
             manifestPlaceholders = [CHANNEL_VALUE: "360baohe"]
         }

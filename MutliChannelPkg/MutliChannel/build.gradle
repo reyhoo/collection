@@ -10,11 +10,68 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [CHANNEL_VALUE: "channel_name"]
+    }
+    signingConfigs {
+        debug {
+            storeFile file("sign/my.jks")
+            storePassword "123456"
+            keyAlias "Hello"
+            keyPassword "123456"
+        }
+
+        release {
+            storeFile file("sign/my.jks")
+            storePassword "123456"
+            keyAlias "Hello"
+            keyPassword "123456"
+        }
+
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+
+        Umeng {
+            manifestPlaceholders = [CHANNEL_VALUE: "Umeng"]
+        }
+        _360baohe {
+            manifestPlaceholders = [CHANNEL_VALUE: "360baohe"]
+        }
+        huawei {
+            manifestPlaceholders = [CHANNEL_VALUE: "huawei"]
+        }
+        _91 {
+//            CHANNEL_VALUE不能纯为数字
+//            manifestPlaceholders = [CHANNEL_VALUE: "91"]
+            manifestPlaceholders = [CHANNEL_VALUE: "91zhushou"]
+        }
+        anzhi {
+            manifestPlaceholders = [CHANNEL_VALUE: "anzhi"]
+        }
+        VIVO {
+            manifestPlaceholders = [CHANNEL_VALUE: "VIVO"]
+        }
+
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = outputFile.name.replace(".apk", "-${defaultConfig.versionName}.apk")
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
         }
     }
 }

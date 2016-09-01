@@ -52,7 +52,7 @@ public class RecycleViewPager extends ViewPager {
         int currentItem = super.getCurrentItem();
         if (currentItem == 0) {
             return getChildCount() - 2;
-        }else if(currentItem == getChildCount()-1){
+        } else if (currentItem == getChildCount() - 1) {
             return 0;
         }
         return super.getCurrentItem() - 1;

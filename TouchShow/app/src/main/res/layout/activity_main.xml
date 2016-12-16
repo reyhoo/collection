@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.administrator.touchshow.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <com.example.administrator.touchshow.MyTextView
+        android:id="@+id/tv"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#ff0000"
+        android:text="Hello World!" />
+</com.example.administrator.touchshow.MyLinearLayout>

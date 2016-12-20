@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_cell_bg_selector">
+
+    <View
+        android:id="@+id/cell_border_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp" />
+
+
+    <LinearLayout
+        android:id="@+id/cell_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5.6"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6.5"></TextView>
+
+            <ImageView
+                android:id="@+id/cell_iv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5.6"
+                android:scaleType="fitCenter"
+                android:src="@drawable/app_credit_payment"></ImageView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6.5"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <TextView
+            android:id="@+id/cell_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7.4"
+            android:gravity="center_horizontal|top"
+            android:text="信用卡还款"
+            android:textColor="#4e4e4e"
+            android:textSize="@dimen/small_text_size"></TextView>
+
+
+    </LinearLayout>
+</FrameLayout>

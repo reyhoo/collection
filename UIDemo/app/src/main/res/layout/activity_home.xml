@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"></FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e6e6e6" />
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/tab_0_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.16" />
+
+            <ImageView
+                android:id="@+id/tab_0_iv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.32"
+                android:src="@drawable/home_tab_cashier_selector" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.12" />
+
+            <TextView
+                android:id="@+id/tab_0_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:gravity="top"
+                android:text="@string/mposHomePageCheckOut"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/smaller_size" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_1_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.16" />
+
+            <ImageView
+                android:id="@+id/tab_1_iv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.32"
+                android:src="@drawable/home_tab_mer_service_selector" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.12" />
+            <TextView
+                android:id="@+id/tab_1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:gravity="top"
+                android:text="@string/mposHomePageMerService"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/smaller_size" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_2_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.16" />
+
+            <ImageView
+                android:id="@+id/tab_2_iv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.32"
+                android:src="@drawable/home_tab_selected_app_selector" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.12" />
+
+            <TextView
+                android:id="@+id/tab_2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:gravity="top"
+                android:text="@string/mposHomePageSelectedApp"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/smaller_size" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_3_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.16" />
+
+            <ImageView
+                android:id="@+id/tab_3_iv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.32"
+                android:src="@drawable/home_tab_mine_selector" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="0.12" />
+
+            <TextView
+                android:id="@+id/tab_3_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:gravity="top"
+                android:text="@string/mposHomePageMine"
+                android:textColor="#bbbbbb"
+                android:textSize="@dimen/smaller_size" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

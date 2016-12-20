@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_content_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.38" />
+
+        <ImageView
+            android:id="@+id/item_icon_iv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.56" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.22" />
+
+        <TextView
+            android:id="@+id/item_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:textColor="#4e4e4e"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:id="@+id/item_desc_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.6"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:ellipsize="end"
+            android:textColor="#999999"
+            android:textSize="@dimen/smaller_size" />
+
+        <LinearLayout
+            android:id="@+id/item_add_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加"
+                android:textColor="@color/good_app_add_btn_text_selector"
+                android:textSize="@dimen/small_text_size" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.36" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/item_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.06" />
+</LinearLayout>

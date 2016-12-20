@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+    <color name="home_leftmenu_pressed">#ff7632</color>
+    <color name="home_main_business_bg_normal">#ffffff</color>
+    <color name="home_main_business_bg_pressed">#eceff6</color>
+    <color name="home_main_business_title">#666666</color>
+    <color name="titleBar_bg">#343944</color>
+    <color name="gray_bg">#f6f6f6</color>
+    <color name="orange_e47f4d">#e47f4d</color>
+    <color name="gray_e8e8e8">#e8e8e8</color>
+    <color name="gray_787878">#787878</color>
+    <color name="gray_e0e0e0">#e0e0e0</color>
+     <color name="gray_e5e5e5">#e5e5e5</color>
+    <color name="warm_prompt_bg">#efefef</color>
+    <color name="devider_bg">#cfd6d6</color>
+    <color name="text_color_black">#272727</color>
+    <color name="text_color_orange">#e5804d</color>
+    <color name="login_bg">#343944</color>
+    <color name="prompt_text_color">#aeaeae</color>
+    <color name="login_bg_s">#253035</color>
+    <color name="white">#ffffff</color>
+    <color name="orange">#E5804D</color>
+    <color name="gray_d9d9d9">#d9d9d9</color>
+    <color name="body_bg">#F6F6F6</color>
+    <color name="head_red">#FE5602</color>
+    <color name="mpos_gray_light">#999999</color>
+    <color name="mpos_gray_line">#cccccc</color>
+    <color name="btn_bg">#6779A1</color>
+    <color name="login_line">#4C515F</color>
+    <color name="login_input_bg">#f5f5f5</color>
+    <color name="login_text_color">#c7c7c7</color>
+    <color name="credit_background_color">#343a43</color>
+    <color name="credit_background_huibai_color">#f6f6f6</color>
+    <color name="btn_cal_blue">#c2c2c2</color>
+    <color name="btn_cal_blue_5D91D8">#5D91D8</color>
+    <color name="blue_8F9EBD">#8F9EBD</color>
+    <color name="btn_cal_gray">#f7f7f7</color>
+    <color name="btn_cal_orang">#EAA333</color>
+    <color name="shsk_bg">#343944</color>
+    <color name="num_unselect">#909090</color>
+    <color name="yhkfk_txtcolor">#0b427d </color>
+    <color name="red">#FF0000</color>
+    <color name="dzqm_bg1">#eeeeee</color>
+    <color name="dzqm_bg2">#e7e7e7</color>
+    <color name="dzqm_line">#8f9ebd</color>
+    <color name="dzqm_txt1">#878787</color>
+    <color name="dzqm_accout">#e47f4d</color>
+    <color name="dzqm_txt2">#626262</color>
+    <color name="tip_highlight">#FF9813</color>
+    <color name="dzqgd_line">#b1b4ba</color>
+    <color name="harm_tips">#BABABA</color>
+    <color name="startpage">#656565</color>
+    <color name="gray_color">#ABABAB</color>
+    <color name="electric_line_bg_color">#D6D6D6</color>
+    <!-- 首页相关色值 -->
+    <color name="home_merchant">#4e5777</color>
+    <color name="home_merchant_select">#454d6a</color>
+    <color name="home_ic_service">#d1786c</color>
+    <color name="home_ic_service_select">#c27064</color>
+    <color name="home_mechant_exc">#8a668c</color>
+    <color name="home_mechant_exc_select">#78567a</color>
+    <color name="home_rural_area">#619d63</color>
+    <color name="home_rural_area_select">#599c5b</color>
+    <color name="home_phone_recharge">#a9c18e</color>
+    <color name="home_phone_recharge_select">#9ab081</color>
+    <color name="home_card">#91bfbf</color>
+    <color name="home_card_select">#87b1b1</color>
+    <color name="home_coupon_check">#9e7c72</color>
+    <color name="home_coupon_check_select">#8f7067</color>
+    <color name="home_manager">#98988f</color>
+    <color name="home_manager_select">#898980</color>
+    <color name="home_real_times_pay">#7b9bb9</color>
+    <color name="home_real_times_pay_select">#7290ab</color>
+    <color name="home_real_times_transfer">#a7aaae</color>
+    <color name="home_real_times_transfer_select">#95989b</color>
+    <color name="home_balance_inquiry">#e7a461</color>
+    <color name="home_balance_inquiry_select">#d59659</color>
+    <color name="ic_balance_query1">#7C7C7C</color>
+    <!-- 管理中心相关色值 -->
+    <color name="glzx_zx1">#a1b3d9</color>
+    <color name="glzx_zx2">#8f8f8f</color>
+    <!-- 注册页面相关色值 -->
+    <color name="register_text1">#fffefe</color>
+    <color name="register_text2">#c6c6c6</color>
+    <color name="register_text3">#b5c4e2</color>
+    <color name="register_text4">#9f9f9f</color>
+    <color name="register_text5">#707070</color>
+
+    <!-- IC卡服务相关色值 -->
+    <color name="ic_service_bg1">#5280a9</color>
+    <color name="ic_service_bg1_select">#4b7aa6</color>
+    
+    <color name="ic_service_bg2">#55A6BA</color>
+    <color name="ic_service_bg2_select">#46a0b8</color>
+    
+    <color name="ic_service_bg3">#A97D69</color>
+    <color name="ic_service_bg3_select">#A07966</color>
+    
+    <color name="wms_color_select">#32cd18</color>
+    <color name="wms_white">#ffffff</color>
+    
+    <!-- 刷卡器界面颜色值 -->
+    <color name="brush_background_color">#343a43</color>
+    <color name="brush_background_huibai_color">#f6f6f6</color>
+    <color name="brush_model_text_color">#a2a2a2</color>
+    <color name="brush_content_color">#818181</color>
+    <color name="brush_xian_text_color">#c0c0c0</color>
+    <color name="brush_radiobutton_text_color">#828282</color>
+    <color name="brush_tou_color">#00000000</color>
+    <color name="brush_tishi_text_color">#677aa0</color>
+    <color name="brush_buttom_text_color">#8b8b8b</color>
+    <color name="credit_model_text_color">#a2a2a2</color>
+    <color name="credit_content_color">#818181</color>
+    <color name="credit_xian_text_color">#c0c0c0</color>
+    <color name="credit_radiobutton_text_color">#828282</color>
+    <color name="credit_tou_color">#00000000</color>
+    <color name="credit_tishi_text_color">#677aa0</color>
+    <color name="credit_buttom_text_color">#8b8b8b</color>
+    <color name="bluetooth_text_color">#8a8a8a</color>
+    <color name="start_text_color">#474747</color>
+    <color name="device_title">#818181</color>
+
+    <!-- 信用卡还款页面相关色值 -->
+    <color name="card_text1">#909090</color>
+    <color name="card_text2">#7f91b3</color>
+    <color name="card_text3">#b9b9b9</color>
+    <color name="card_text4">#3f4655</color>
+    <!-- 信用卡还款-订单确认页面相关色值 -->
+    <color name="order_text1">#9a9a9a</color>
+    <color name="order_text2">#7f91b3</color>
+    <color name="order_text3">#c47f4d</color>
+    <color name="order_text4">#3f4655</color>
+    <color name="credit_et_txt">#797979</color>
+    <color name="credit_confirm_date">#909090</color>
+
+    <!-- 交易记录相关色值 -->
+    <color name="history_line">#b1b4ba</color>
+    <color name="history_text1">#828282</color>
+    <color name="history_success">#3676b2</color>
+    <color name="history_background">#f3f3f3</color>
+    <color name="history_title_text">#bbbbbb</color>
+    <color name="dayTrans_payment">#feaf3d</color>
+    <color name="dayTrans_revocation">#e47f4d</color>
+    <color name="dayTrans_cancelled">#919191</color>
+
+    <!-- 帐户管理界面使用 -->
+    <color name="account_text">#9a9a9a</color>
+    <color name="account_text1">#7c93b2</color>
+    <!-- 修改密码界面使用 -->
+    <color name="modify_xian">#b1b5bb</color>
+    <color name="modify_text">#989b9a</color>
+    <color name="account_xian">#CED7D5</color>
+    <color name="listView_background_color">#FFFFFFFF</color>
+
+    <!-- 订单确定界面 -->
+    <color name="phone_text">#8092b3</color>
+    <color name="phone_text1">#9a9a9a</color>
+    <color name="phone_text2">#7f92b5</color>
+    <color name="phone_text3">#e1814a</color>
+    <color name="phone_text4">#afafaf</color>
+    <!-- 手机充值界面 -->
+    <color name="recharge_text">#909090</color>
+    <color name="recharge_text1">#babab7</color>
+    <color name="recharge_text2">#b9b9b9</color>
+
+    <!-- 关于我们界面 -->
+    <color name="about_us_text1">#989898</color>
+
+    <!-- 拍照界面 -->
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="bankcard_aquire_txt_color">#6b6b6b</color>
+    <color name="login_next_auto">#e1e1e1</color>
+    <color name="circular">#4f5d7d</color>
+    <color name="circular1">#e1e1e1</color>
+    <color name="circle1">#e1e1e1</color>
+    <color name="circle2">#e57f4e</color>
+    <color name="phone_pay_txt">#7f91b3</color>
+    <color name="phone_pay_tips">#b5b5b5</color>
+
+    <!-- 购买刷卡器页面相关色值 -->
+    <color name="buy_card1">#8294B4</color>
+    <color name="buy_card2">#D2D2D2</color>
+    <color name="buy_card3">#F3F3F3</color>
+    <color name="buy_text">#989898</color>
+    <!-- 历史交易记录相关色值 -->
+    <color name="login_txt">#bbbbbb</color>
+    <color name="bluetooth_device_list">#818181</color>
+    <color name="dark_button">#7f98a6</color>
+    <color name="dark_button_pressed">#698392</color>
+    <color name="history_timeout">#ffa507</color>
+    <color name="history_fail">#ff0101</color>
+    <color name="toDays_background">#6679a0</color>
+    <color name="toDays_background_to">#BBBBBB</color>
+    <color name="history_gray">#979797</color>
+
+    <!-- 对话框相关色值 -->
+    <color name="black">#000000</color>
+    <color name="pressColor">#7F92B3</color>
+    <color name="normeColor">#EEEEEE</color>
+    <color name="lineColor">#CFD6D6</color><!-- 8F9EBD -->
+    <color name="btnTextColor">#7F91B3</color>
+    <color name="scan_code">#bcbcbc</color>
+    <color name="unselectTxt">#7F91B3</color>
+    <color name="selectTxt">#FFFFFF</color>
+    <color name="textColor">#666666</color>
+    <color name="buttonTextColor">#7F91B3</color>
+    <color name="textColorError">#E00202</color>
+	
+    <!-- 便民交易相关色值 -->
+    <color name="success">#3676B2</color>
+    <color name="fail">#FF0101</color>
+    <color name="timeOut">#FF0507</color>
+    <color name="phone_txt_default">#d1d1d1</color>
+    <color name="phone_txt_light">#99a0a0</color>
+    <color name="harm_desc">#868686</color>
+
+    <!-- 便民色值 -->
+    <color name="success_transaction">#3676B2</color>
+    <color name="fail_transaction">#FF0101</color>
+    <color name="paying_transaction">#FEAF3D</color>
+    <color name="revoke_transaction">#919191</color>
+    <color name="revoking_transaction">#E47F4D</color>
+    <color name="red_release">#ffc70007</color>
+    <color name="red_press">#ffb80012</color>
+    <color name="default_transaction">#98998E</color>
+    <color name="merchant_amount_color">#6779a0</color>
+    <color name="merchant_open_search">#7A8FBD</color>
+    <!-- pad -->
+    <!-- 商户收款 -->
+    <color name="current_spend">#6779a0</color>
+    <!-- 电子签购单 -->
+    <color name="determinate_sign">#6779a1</color>
+    <color name="determinate_title">#dddddd</color>
+	<color name="electric_sign_msg_line">#D5D5D5</color>
+    <!-- 动态加载拖拽 页面 -->
+    <color name="delete_color_filter">#A5FF0000</color>
+
+    <!-- 我的 -->
+    <color name="my_advice_image_bg">#F0F0F0</color>
+    <color name="my_add_casher_hint">#EFEFEF</color>  
+    <color name="my_advice_text_color">#A7A7A7</color>
+    <color name="my_info_text_title">#787878</color>
+    <color name="my_info_text_content">#9A9A9A</color>
+    <!-- 当日交易查询 -->  
+    <color name="today_trans">#8f9ebd</color>
+    <color name="today_trans_select">#8391ae</color>    
+    <color name="today_trans_cannot_cancel">#c6c6c6</color>
+    <!--二维码-->
+    <color name="color_grey_a8">#A8A8A8</color>
+    <color name="merchant_pay_button_normal">#86c6e2</color>
+    <color name="pay_result_item_font">#606060</color>
+    <color name="pay_result_give_up_font">#c1c1c1</color>
+    <color name="pay_result_give_up_font_pressed">#ffb583</color>
+    <color name="pay_result_success_font">#63d35f</color>
+    <color name="pay_result_item_line">#fafafa</color>
+    
+    
+    <!--2.0-->
+    <!--精选应用-->
+    <color name="good_app_add_btn_text">#0076ff</color>
+
+    <!--收银-->
+    <color name="cashier_action_bg_normal">#63d35f</color>
+    <color name="cashier_action_bg_press">#60C95B</color>
+    <!--2.0-->
+</resources>

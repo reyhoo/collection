@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">UIDemo</string>
+
+
+    <string name="mposHomePageMine">我</string>
+    <string name="mposHomePageCheckOut">收银</string>
+    <string name="mposHomePageMerService">商户服务</string>
+    <string name="mposHomePageSelectedApp">精选应用</string>
+
+
+    <string name="mposMinePageDefaultHomePageSetting">默认首页设置</string>
+</resources>

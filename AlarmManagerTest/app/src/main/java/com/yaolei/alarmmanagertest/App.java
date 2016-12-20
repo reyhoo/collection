@@ -2,6 +2,7 @@ package com.yaolei.alarmmanagertest;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.PowerManager;
 import android.util.Log;
 
@@ -14,6 +15,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        startService(new Intent(this, MyService.class));
+        AlarmUtil.setRepeat(this,"repeat20",20);
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         mLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MyAlarmLock");
         mLock.acquire();

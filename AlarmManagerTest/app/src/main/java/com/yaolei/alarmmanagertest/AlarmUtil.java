@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -52,6 +53,7 @@ public class AlarmUtil {
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public static void setExact(Context context, long triggerAtMillis) {
+        Toast.makeText(context, "设置闹钟:"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(triggerAtMillis)), Toast.LENGTH_SHORT).show();
         Log.i("AlarmUtil_","AlarmUtil_:"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(triggerAtMillis)));
         context = context.getApplicationContext();
         AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);

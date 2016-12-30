@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.setOnce:
-                AlarmUtil.setOnce(getApplication(), "once", 5);
+//                AlarmUtil.setOnce(getApplication(), "once", 5);
+                startActivityForResult(new Intent(MainActivity.this,MainActivity.class),10);
                 break;
             case R.id.setRepeat5:
                 AlarmUtil.setRepeat(getApplication(), "repeat5", 5);
@@ -78,5 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             triggerTime = calendar.getTime().getTime();
         }
         return triggerTime;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this, resultCode+":"+RESULT_CANCELED+":"+data, Toast.LENGTH_SHORT).show();
     }
 }

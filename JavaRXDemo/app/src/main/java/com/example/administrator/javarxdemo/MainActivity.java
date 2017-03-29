@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void call(Subscriber<? super Student> subscriber) {
                         Log.i("hello_","hello_:"+Thread.currentThread()+";;OnSubscribe");
-
+                        //工作线程
 
                         for (Student student :
                                 list) {
@@ -212,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
                     .doOnSubscribe(new Action0() {
                         @Override
                         public void call() {
+                            //UI线程
                             DialogUtil.showLoading(MainActivity.this, "loading...", new DialogInterface.OnDismissListener() {
                                 @Override
                                 public void onDismiss(DialogInterface dialog) {
@@ -227,10 +228,12 @@ public class MainActivity extends AppCompatActivity {
                    .flatMap(new Func1<Student, Observable<Course>>() {
                     @Override
                     public Observable<Course> call(final Student student) {
+                        //UI线程
                         Log.i("hello_","hello_:"+Thread.currentThread()+";;flatMap");
                         return Observable.create(new Observable.OnSubscribe<Course>() {
                             @Override
                             public void call(Subscriber<? super Course> subscriber) {
+                                //UI线程
                                 Log.i("hello_","hello_:"+Thread.currentThread()+";;flatMap;;OnSubscribe");
                                 for (Course course :
                                         student.courses) {
@@ -239,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                                 subscriber.onCompleted();
                             }
                         })
-                                //.subscribeOn(Schedulers.io())//如果这里切换到io线程，那后面的map,subscribe都会在io线程；调用observeOn切换到UI线程
+                                //.subscribeOn(Schedulers.io())//如果这里切换到io线程，那后面的map,subscribe都会在io线程；调用observeOn(下行)切换到UI线程
                                 ;
                     }
                 })
@@ -247,22 +250,26 @@ public class MainActivity extends AppCompatActivity {
                         .map(new Func1<Course, String>() {
                     @Override
                     public String call(Course course) {
+                        //UI线程
                         Log.i("hello_","hello_:"+Thread.currentThread()+";;map");
                         return course.name;
                     }
                 }).subscribe(new Action1<String>() {
                     @Override
                     public void call(String s) {
+                        //UI线程
                         Log.i("hello_", "hello_:" + Thread.currentThread() + ";;subscribe:" + s);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
+                        //UI线程
                         DialogUtil.dismissDialog();
                     }
                 }, new Action0() {
                     @Override
                     public void call() {
+                        //UI线程
                         DialogUtil.dismissDialog();
                     }
                 });

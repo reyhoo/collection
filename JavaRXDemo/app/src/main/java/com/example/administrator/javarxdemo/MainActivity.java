@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
                                         subscription.unsubscribe();
                                     }
                                 }
-                            });
+                            },true);
                         }
                     })
                     .subscribeOn(AndroidSchedulers.mainThread())
@@ -265,15 +265,25 @@ public class MainActivity extends AppCompatActivity {
                     public void call(Throwable throwable) {
                         //UI线程
                         DialogUtil.dismissDialog();
+                        Toast.makeText(MainActivity.this, "error", Toast.LENGTH_SHORT).show();
                     }
                 }, new Action0() {
                     @Override
                     public void call() {
                         //UI线程
                         DialogUtil.dismissDialog();
+                        Toast.makeText(MainActivity.this, "complete", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(subscription!=null && !subscription.isUnsubscribed()){
+            subscription.unsubscribe();
+        }
     }
 }

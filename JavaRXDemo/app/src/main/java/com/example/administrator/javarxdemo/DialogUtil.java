@@ -18,13 +18,17 @@ import java.util.List;
 public class DialogUtil {
 
     static MyProgressDialog mDialog;
+
     public static void showLoading(Activity activity, String msg, DialogInterface.OnDismissListener listener){
+        showLoading(activity,msg,listener,false);
+    }
+    public static void showLoading(Activity activity, String msg, DialogInterface.OnDismissListener listener,boolean canCancel){
 
 
         mDialog = new MyProgressDialog(activity);
         mDialog.setIndeterminate(true);
         mDialog.setMessage(msg);
-        mDialog.setCancelable(false);
+        mDialog.setCancelable(canCancel);
         mDialog.setCanceledOnTouchOutside(false);
         mDialog.setOnDismissListener(listener);
         mDialog.show();
@@ -40,6 +44,7 @@ public class DialogUtil {
 
         private Context context;
         private DialogInterface.OnDismissListener listener;
+        private boolean mCanCancel;
         public MyProgressDialog(Context context) {
             super(context);
             this.context = context;
@@ -47,8 +52,15 @@ public class DialogUtil {
 
         @Override
         public void onBackPressed() {
+            if(!mCanCancel)return;
             dismissDialog();
+            ((Activity)context).finish();
             listener.onDismiss(this);
+        }
+
+        @Override
+        public void setCancelable(boolean flag) {
+            mCanCancel = flag;
         }
 
         @Override

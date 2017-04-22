@@ -113,7 +113,7 @@ public class MyLinearLayout extends LinearLayout {
                 break;
         }
         Log.i(TAG,"onInterceptTouchEvent:"+action);
-//        return super.onInterceptTouchEvent(event);
-        return true;
+        return super.onInterceptTouchEvent(event);
+//        return true;
     }
 }

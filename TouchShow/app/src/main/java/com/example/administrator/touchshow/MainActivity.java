@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 Log.i("MyTextView_","onTouch:"+action);
-                return true;
+                return false;
             }
         });
     }

@@ -3,6 +3,7 @@ package com.example.administrator.javarxdemo;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -275,6 +276,16 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "complete", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+
+        findViewById(R.id.btn_jump).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SecondActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
     }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Observer;
@@ -28,7 +29,7 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
 
     static List<Activity> list= new ArrayList<>();
-    private Subscription subscription;
+    private Subscription subscription,subscription1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -284,10 +285,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), SecondActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });
+
+
+        findViewById(R.id.interval).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                subscription1 = Observable.interval(1, TimeUnit.SECONDS).filter(new Func1<Long, Boolean>() {
+                    @Override
+                    public Boolean call(Long aLong) {
+                        return aLong >= 5;
+                    }
+                })
+                        .subscribe(new Subscriber<Long>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        Log.i("interval_","interval_"+aLong);
+                    }
+                });
+            }
+        });
+
     }
 
     @Override
@@ -295,6 +326,9 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         if(subscription!=null && !subscription.isUnsubscribed()){
             subscription.unsubscribe();
+        }
+        if(subscription1!=null && !subscription1.isUnsubscribed()){
+            subscription1.unsubscribe();
         }
     }
 }

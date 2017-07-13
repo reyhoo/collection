@@ -16,7 +16,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         startService(new Intent(this, MyService.class));
-        AlarmUtil.setRepeat(this,"repeat20",20);
+//        AlarmUtil.setRepeat(this,"repeat20",20);
+        AlarmUtil.setExact(this,System.currentTimeMillis() + 10000);
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         mLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "MyAlarmLock");
         mLock.acquire();

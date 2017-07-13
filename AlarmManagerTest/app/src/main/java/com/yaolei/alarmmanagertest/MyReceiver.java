@@ -29,15 +29,20 @@ public class MyReceiver extends BroadcastReceiver {
             Log.i("App_", "App_onReceive:" + intent.getData());
 
             if(uri.equals("http://exact")){
-                clock(context,intent.getLongExtra("triggerAtMillis",0));
-                return;
-            }
-            if (uri.equals("http://repeat20")) {
                 boolean isRunning = AppUtil.isServiceRunning(context, MyService.class);
                 Log.i("App_", "App_onReceive:isRunning:" + isRunning);
                 if(!isRunning){
                     context.startService(new Intent(context,MyService.class));
                 }
+                clock(context,intent.getLongExtra("triggerAtMillis",0));
+                return;
+            }
+            if (uri.equals("http://repeat20")) {
+//                boolean isRunning = AppUtil.isServiceRunning(context, MyService.class);
+//                Log.i("App_", "App_onReceive:isRunning:" + isRunning);
+//                if(!isRunning){
+//                    context.startService(new Intent(context,MyService.class));
+//                }
                 return;
             }
 
@@ -46,13 +51,14 @@ public class MyReceiver extends BroadcastReceiver {
             intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(intent1);
         } else if (action.equals(Intent.ACTION_BOOT_COMPLETED)) {
-            context.startService(new Intent(context, MyService.class));
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-            long triggerAtMillis = preferences.getLong("triggerAtMillis", 0);
-            if(triggerAtMillis<=0)return;
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(new Date(triggerAtMillis));
-            AlarmUtil.setExact(context,getTriggerTime(calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE)));
+//            context.startService(new Intent(context, MyService.class));
+//            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+//            long triggerAtMillis = preferences.getLong("triggerAtMillis", 0);
+//            if(triggerAtMillis<=0)return;
+//            Calendar calendar = Calendar.getInstance();
+//            calendar.setTime(new Date(triggerAtMillis));
+//            AlarmUtil.setExact(context,getTriggerTime(calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE)));
+            AlarmUtil.setExact(context,System.currentTimeMillis()+1000);
         }
 
     }
@@ -74,9 +80,11 @@ public class MyReceiver extends BroadcastReceiver {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date(triggerAtMillis));
 
-        AlarmUtil.setExact(context,getTriggerTime(calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE)));
+//        AlarmUtil.setExact(context,getTriggerTime(calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE)));
+        AlarmUtil.setExact(context,triggerAtMillis + 10000);
 
-        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(2000);
+
+//        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+//        vibrator.vibrate(2000);
     }
 }

@@ -2,12 +2,19 @@ package com.example.administrator.javarxdemo;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,6 +42,49 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView tv = (TextView) findViewById(R.id.msgTv);
+        tv.setText("");
+        String[] abis = new String[0];
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            abis = Build.SUPPORTED_ABIS;
+        }else{
+            abis = new String[]{Build.CPU_ABI,Build.CPU_ABI2};
+        }
+        for (String s :
+                abis) {
+            tv.append(s);
+            tv.append("\n");
+        }
+        WindowManager windowManager = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics m = new DisplayMetrics();
+        windowManager.getDefaultDisplay().getMetrics(m);
+        tv.append("屏幕信息：\n");
+        tv.append("density:"+m.density + "\n");
+        tv.append("widthPixels:"+m.widthPixels + "\n");
+        tv.append("heightPixels:"+m.heightPixels + "\n");
+        tv.append("densityDpi:"+m.densityDpi + "\n");
+        tv.append("scaledDensity:"+m.scaledDensity + "\n");
+        BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.mipmap.ic_launcher);
+        int height = drawable.getBitmap().getHeight();
+        String dpi = "";
+        switch (height){
+            case 192:
+                dpi = "xxxhdpi";//4  640
+                break;
+            case 144:
+                dpi = "xxhdpi";//3  480
+                break;
+            case 96:
+                dpi = "xhdpi";//2  320
+                break;
+            case 72:
+                dpi = "hdpi";//1.5 240
+                break;
+            case 48:
+                dpi = "mdpi";//1  160
+                break;
+        }
+        tv.append("dpi:"+dpi+ "\n");
 //        list.add(this);
         //just
 //        Observable.just("1","2","3").subscribe(new Action1<String>() {

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>启动项</title>
+    <link href="index.css" rel="stylesheet">
+    <style type="text/css">
+
+
+        #tab{
+            /*border: 1px solid #dddddd;*/
+            width: 90%;
+            height: 148px;
+            /*裁剪超出部分(ul如果没有设置宽度是独占一行)*/
+            overflow: hidden;
+            background-color: white;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #tab ul{
+            /*width: 501px;*/
+            width: 100%;
+            position: absolute;
+            /*left: -1px;*/
+        }
+
+        #tab ul li{
+            /*li是块级标签,想让其占一行改变标签类型或者浮动*/
+            float: left;
+             font-size: 14px;
+             border-bottom: 1px solid #dddddd;
+        }
+
+        #tab ul li.left{
+            border-right: 1px solid #dddddd;
+            /*padding-left: 1px;*/
+        }
+
+        #tab-header{
+            height: 40px;
+            /*background-color: #f7f7f7;*/
+            line-height: 40px;
+            position: relative;
+        }
+
+        #tab-content{
+            height: 35px;
+            line-height: 35px;
+            position: relative;
+            color: #0073de;
+            /*padding: 0;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<!--导航-->
+<div id="DeepNLPNavBar">
+    <!--左侧按钮-->
+    <div class="DeepNLPNavBar-left">
+        <a href="javascript:history.back()">返回</a>
+    </div>
+
+    <!--标题-->
+    <div class="DeepNLPNavBar-center">
+        <!--class="navbar-brand" -->
+        <a>启动项</a>
+    </div>
+    <!--右侧搜索按钮-->
+    <div class="DeepNLPNavBar-right">
+        <!--<a href="#"></a>-->
+    </div>
+
+</div>
+<br/>
+<br/>
+
+
+<!--内容-->
+<div id="content">
+    <div class="title"><ul class="contentTitle"><li>开机:</li></ul></div>
+
+    <p>1) 确保电源有电，找到背面的电源开关，然后将开关拨至“ON”，启动艾力克。</p>
+    <br/>
+    <p>2)轻轻将艾力克放在光滑平坦的表面上，使其直立于其轮子上，远离边缘和障碍物。</p>
+    <br/>
+    <p>3)成功平衡后，你可以感觉到轮子中的牵引力。此时松手，艾力克将自行站立并稍稍移动以调节其平衡。</p>
+    <br/>
+    <br/>
+    <div class="title"><ul class="contentTitle"><li>关机:</li></ul></div>
+    <p>如与艾力克机器人玩耍结束，请将其背后的电源拨至“OFF”关闭艾力克。</p>
+    <br/>
+    <br/>
+    <div class="title"><ul class="contentTitle"><li>游戏分类:</li></ul></div>
+    <p>艾力克共有三个游戏模块，分别是：蓝灯互动模块、黄灯静态模块和红灯对战模块；其中，蓝灯互动模块、黄灯静态模块可在有网情况下，通过识别语“艾力克”连接网络，实现联网互动。模块之间通过转动轮子进行相互切换。模块音效配合胸口LED灯变换不同颜色，以表明艾力克所处的当前游戏模块。</p>
+
+    <br/>
+    <br/>
+    <!--表格-->
+    <div id="tab">
+        <div id="tab-header">
+            <ul class="form">
+                <li class="left">功能模块</li>
+                <li>胸口LED指示灯颜色</li>
+            </ul>
+        </div>
+
+        <div id="tab-content">
+            <ul>
+                <li class="left">互动模块</li>
+                <li>蓝色</li>
+                <li class="left">静态模块</li>
+                <li>黄色</li>
+                <li class="left">对战模块</li>
+                <li>红色</li>
+            </ul>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<script type="text/javascript">
+    var tabHeader = document.getElementById('tab-header');
+    var tabHeaderWidth = tabHeader.offsetWidth;
+    console.log(tabHeaderWidth);
+    var lis = document.getElementById("tab").getElementsByTagName("li");
+    for(var i=0; i<lis.length; i++){
+        var headerLi = lis[i];
+        headerLi.style.width = (tabHeaderWidth - 6) / 2 + 'px';
+        console.log(headerLi.offsetWidth);
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>

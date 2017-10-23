@@ -62,6 +62,9 @@ android {
         }
 
     }
+    productFlavors{
+        phone{}
+    }
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             def outputFile = output.outputFile

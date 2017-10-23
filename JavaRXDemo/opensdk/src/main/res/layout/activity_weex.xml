@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chinaums.xmsmk.view.percentlayout.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ums="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_rootLayout"
+    style="@style/layout_normal_theme"
+    android:orientation="vertical">
+
+
+</com.chinaums.xmsmk.view.percentlayout.PercentRelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.administrator.hello;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
@@ -36,16 +37,17 @@ public class MainActivity extends AppCompatActivity {
         }
         String currentEnvironment = appInfo.metaData
                 .getString("CurrentEnvironment");
+        String DeviceType = appInfo.metaData
+                .getString("DeviceType");
         tv = (TextView) findViewById(R.id.tv);
-        tv.setText("Evn:" + currentEnvironment + ";app_name:" + getString(R.string.app_name));
+        tv.setText("Evn:" + currentEnvironment + ";DeviceType"+DeviceType+";app_name:" + getString(R.string.app_name));
 
-        if (savedInstanceState != null) {
-            tv.append(savedInstanceState.getString("temp", ""));
-
-        }
+//        if (savedInstanceState != null) {
+//            tv.append(savedInstanceState.getString("temp", ""));
+//
+//        }
         int margin = (int) getResources().getDimension(R.dimen.activity_horizontal_margin);
-        tv.setText(margin + "");
-
+//        tv.setText(margin + "");
     }
 
 

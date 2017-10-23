@@ -9,7 +9,9 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [CHANNEL_VALUE: "channel_name"]
     }
+
     sourceSets {
         main{
             manifest.srcFile "AndroidManifest.xml"
@@ -35,10 +37,31 @@ android {
 
         }
         pad{
-            applicationIdSuffix ".hd"
-            versionName "1.0hd"
+            applicationId ".hd"
+            versionName versionName+"hd"
         }
     }
+//    productFlavors {
+//
+//        phone360baohe {
+//            manifestPlaceholders = [CHANNEL_VALUE: "360baohe"]
+//        }
+//        huawei {
+//            manifestPlaceholders = [CHANNEL_VALUE: "huawei"]
+//        }
+//        _91 {
+////            CHANNEL_VALUE不能纯为数字
+////            manifestPlaceholders = [CHANNEL_VALUE: "91"]
+//            manifestPlaceholders = [CHANNEL_VALUE: "91zhushou"]
+//        }
+//        anzhi {
+//            manifestPlaceholders = [CHANNEL_VALUE: "anzhi"]
+//        }
+//        VIVO {
+//            manifestPlaceholders = [CHANNEL_VALUE: "VIVO"]
+//        }
+//
+//    }
     signingConfigs {
         debug {
             storeFile file("sign/my.jks")

@@ -1,0 +1,9 @@
+package com.chinaums.opensdk.cons;
+
+public enum DynamicWebviewLoadingState {
+    WEBVIEW_LOADING_UNKNOWN,
+    WEBVIEW_LOADING_PAGE_STARTED,
+    WEBVIEW_LOADING_PAGE_LOADING,
+    WEBVIEW_LOADING_PAGE_FINISHED,
+    WEBVIEW_LOADING_RECEIVED_ERROR
+}
